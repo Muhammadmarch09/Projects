@@ -2,15 +2,21 @@
 window.onload = () => {
   main();
 };
+// The main function
 function main() {
   const changeBtn = document.getElementById("change-btn");
   const body = document.getElementById("root");
   const output = document.getElementById("output");
+  const copyBtn = document.getElementById("copy-btn");
 
   changeBtn.addEventListener("click", function () {
     const bgColor = generatehexacode();
     body.style.backgroundColor = bgColor;
     output.value = bgColor;
+  });
+
+  copyBtn.addEventListener("click", function () {
+    navigator.clipboard.writeText(output.value);
   });
 }
 
